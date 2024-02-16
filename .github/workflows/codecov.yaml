@@ -38,10 +38,12 @@ concurrency:
 
 jobs:
   analyze:
-    runs-on: 'ubuntu-latest'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Codecov
-        uses: codecov/codecov-action@v4
-        
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v4.0.1
+        env:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: josephca/testcode
+              
