@@ -15,6 +15,8 @@ export const dynamicPluginsInfoPlugin = createBackendPlugin({
       },
       async init({ http, pluginProvider }) {
         http.use(await createRouter({ pluginProvider }));
+
+        
       },
     });
   },
