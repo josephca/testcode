@@ -12,8 +12,6 @@ export const dynamicPluginsInfoPlugin = createBackendPlugin({
       deps: {
         http: coreServices.httpRouter,
         pluginProvider: dynamicPluginsServiceRef,
-
-        
       },
       async init({ http, pluginProvider }) {
         http.use(await createRouter({ pluginProvider }));
